@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-Dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hassan Selim Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo+Play:wght@200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <link rel="stylesheet" href="css/Style2.css" />
+
+    <link href="imgs/imgs/Logo2.png" rel="icon" />
+  </head>
+
+  <body id="body" >
+    <div class="bg-color"></div>
+
+    <div class="container">
+      <div class="scroller"></div>
+      <div class="mode">
+        <ul class="settheme" onclick="soundEffect()">
+          <li>
+            <i id="light" class="bx bxs-sun" data-theme="light"></i>
+          </li>
+          <li>
+            <i id="dark" class="bx bxs-moon" data-theme="dark"></i>
+          </li>
+        </ul>
+      </div>
+      <button class="lang ar" onclick="ar()">ع</button>
+      <header>
+        <div class="navbar">
+          <div class="logo">
+            <img class="l1" src="imgs/imgs/Logo.png" alt="" />
+            <img class="l2" src="imgs/imgs/Logo2.png" alt="" />
+            <h1>hassan selim <span>|| portfolio</span></h1>
+          </div>
+          <nav>
+            <a class="active" href="#">home</a>
+            <a href="#about">about</a>
+            <a href="#services">services</a>
+            <a href="#projects">projects</a>
+            <a href="#contact">contact</a>
+            <a href="https://hassanselim.blogspot.com/" target="_blank">blog</a>
+          </nav>
+        </div>
+        <div class="navbar2">
+          <div class="logo">
+            <img src="imgs/imgs/Logo2.png" alt="" />
+            <h1>hassan selim <span>|| portfolio</span></h1>
+          </div>
+          <nav>
+            <a class="active" href="#">home</a>
+            <a href="#about">about</a>
+            <a href="#services">services</a>
+            <a href="#projects">projects</a>
+            <a href="#contact">contact</a>
+            <a href="https://hassanselim.blogspot.com/" target="_blank">blog</a>
+          </nav>
+        </div>
+        <div class="navbar3">
+          <i onclick="showNav()" id="menu" class="bx bx-menu"></i>
+
+          <i id="close" class="bx bx-message-square-x" onclick="closeNav()"></i>
+          <nav class="nav3">
+            <div class="act" onclick="closeNav()">
+              <a class="active" href="#">home</a>
+              <a href="#about">about</a>
+              <a href="#services">services</a>
+              <a href="#projects">projects</a>
+              <a href="#contact">contact</a>
+              <a href="https://hassanselim.blogspot.com/" target="_blank"
+                >blog</a
+              >
+            </div>
+          </nav>
+        </div>
+      </header>
+      <section id="home" class="section">
+        <div class="hero">
+          <div class="hero-img">
+            <img src="imgs/imgs/fvcon.svg" />
+          </div>
+          <div>
+            <h1 class="animate__animated animate__bounceInLeft">
+              hello, it's me
+            </h1>
+            <h3 class="animate__animated animate__fadeInLeftBig">
+              hassan selim
+            </h3>
+            <p>
+              Welcome to my personal humble gallery Here you will find some
+              personal information about me, my work, my interests, and some of
+              my work Through this website, you can view the work I have
+              completed, in addition to the ability to send design requests and
+              personal correspondence.
+            </p>
+            <a href="imgs/imgs/HasssnSelim-CV.jpg" class="cv-btn"
+              ><button onclick="soundEffect()" >Download cv</button></a
+            >
+            <!--  <button>Download cv</button> -->
+            <div class="social">
+              <a href="https://www.facebook.com/7asanselim" target="_blank"
+                ><i class="bx bxl-facebook-circle"></i
+              ></a>
+              <a href="https://instagram.com/7assanselim" target="_blank"
+                ><i class="bx bxl-instagram-alt"></i
+              ></a>
+              <a href="http://www.behance.net/7assanselim" target="_blank"
+                ><i class="bx bxl-behance"></i
+              ></a>
+              <a href="https://dribbble.com/7assanSelim" target="_blank"
+                ><i class="bx bxl-dribbble"></i
+              ></a>
+              <a href="https://github.com/Hassan-Selim" target="_blank"
+            ><i class='bx bxl-github'></i></a>
+              <a href="https://www.linkedin.com/in/7assanselim" target="_blank"
+                ><i class="bx bxl-linkedin-square"></i
+              ></a>
+              
+              <a href="https://hassanselim.blogspot.com/" target="_blank"
+                ><i class='bx bxl-blogger'></i></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="about-img">
+          <img src="imgs/imgs/me.png" alt="" loading="lazy" />
+        </div>
+        <div>
+          <h4>about <span>me!</span></h4>
+          <p>
+            Hello, My name is <b>Hassan Selim.</b> I have been working as a
+            graphic designer <b>since 2014</b> and have extensive experience in
+            logo and business identity design. <br />
+            I am also good at designing all types of publications and
+            advertising designs ..I am also good at drawing cartoon characters.
+            <br />Also, at the current stage, I am working on developing myself
+            in the field of website programming.. and this website is the
+            beginning of my work.
+          </p>
+          <a href="#contact" onclick="soundEffect()"><button>contact me</button></a>
+        </div>
+      </section>
+
+      <section id="services" class="section">
+        <h4>my <span>services</span></h4>
+
+        <div class="boxes">
+          <div class="box1">
+            <i class="bx bxl-sketch"></i>
+            <h3>logo design</h3>
+            <p>
+              Design and implement all types of logos and commercial identity
+              with professionalism and mastery
+            </p>
+            <button><a href="logo.html" target="_blank" >learn more</a></button>
+          </div>
+          <div class="box1">
+            <i class="bx bxs-palette"></i>
+            <h3>publications design</h3>
+            <p>
+              Designing all types of publications, such as banners and paper
+              publications Fast and professional
+            </p>
+            <button><a href="printing.html" target="_blank" >learn more</a></button>
+          </div>
+          <div class="box1">
+            <i class="bx bx-paint"></i>
+            <h3>social media</h3>
+            <p>
+              Social media post designs that seek to achieve marketing the
+              demand
+            </p>
+            <button><a href="social.html" target="_blank" >learn more</a></button>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <h4>latest <span>projects</span></h4>
+        <div class="cards">
+          <div class="card">
+            <img src="imgs/imgs/p1.jpg" alt="" loading="lazy" />
+            <div class="intro">
+              <h1>EVERXT</h1>
+              <p>EVERXT tecnology Business identity</p>
+              <a
+                href="https://hassanselim.blogspot.com/2024/10/everxt.html"
+                target="_blank"
+                ><button>view project</button></a
+              >
+            </div>
+          </div>
+          <div class="card">
+            <img src="imgs/imgs/p2.png" alt="" loading="lazy" />
+            <div class="intro">
+              <h1>Aqar Square</h1>
+              <p>Aqar Square Real-estate Marketing</p>
+              <a
+                href="https://hassanselim.blogspot.com/2023/09/aqar-square.html"
+                target="_blank"
+                ><button>view project</button></a
+              >
+            </div>
+          </div>
+          <div class="card">
+            <img src="imgs/imgs/p3.png" alt="" loading="lazy" />
+            <div class="intro">
+              <h1>hedaya stationery</h1>
+              <p>hedaya stationery logo design</p>
+              <a
+                href="https://www.behance.net/gallery/90755603/hedaya-stationery-logo"
+                target="_blank"
+                ><button>view project</button></a
+              >
+            </div>
+          </div>
+          <div class="card">
+            <img src="imgs/imgs/p4.png" alt="" loading="lazy" />
+            <div class="intro">
+              <h1>Bright Empire</h1>
+              <p>Bright Empire</p>
+              <a
+                href="https://www.behance.net/gallery/90753455/Bright-Empire-Logo"
+                target="_blank"
+                ><button>view project</button></a
+              >
+            </div>
+          </div>
+          <div class="card">
+            <img src="imgs/imgs/p6.png" alt="" loading="lazy" />
+            <div class="intro">
+              <h1>Abu Shanab</h1>
+              <p>Abu Shanab Logo</p>
+              <a
+                href="https://www.behance.net/gallery/90753087/Abu-Shanab-Logo"
+                target="_blank"
+                ><button>view project</button></a
+              >
+            </div>
+          </div>
+          <div class="card">
+            <img src="imgs/imgs/p7.jpg" alt="" loading="lazy" />
+            <div class="intro">
+              <h1>advertizing magazine</h1>
+              <p>advertizing printed magazine</p>
+              <a
+                href="https://www.behance.net/gallery/181780981/_"
+                target="_blank"
+                ><button>view project</button></a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="skils">
+        <div class="skils">
+          <h4>my <span>skills</span>!</h4>
+          <div class="skils-cards">
+            <div class="skil-card1">
+              <h2>design</h2>
+              <h5 class="">photoshop</h5>
+              <div class="photoshop-skil"></div>
+              <h5>illistrator</h5>
+              <div class="illustrator-skil"></div>
+              <h2>front end</h2>
+              <h5>
+                html + css + javascript
+                <p>( in progress )</p>
+              </h5>
+              <div class="front-end-skil"></div>
+            </div>
+            <div class="skil-card2">
+              <h2>microsoft office</h2>
+              <h5 class="">excel</h5>
+              <div class="excel-skil"></div>
+              <h5>word</h5>
+              <div class="word-skil"></div>
+              <h5>power point</h5>
+              <div class="power-point-skil"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <h4>contact <span>me!</span></h4>
+        <form>
+          <input
+            id="contact-name"
+            type="text"
+            placeholder="enter your name"
+            required
+          />
+          <input
+            id="contact-mail"
+            type="email"
+            placeholder="enter your email"
+            required
+          />
+          <input type="subject" placeholder="subject" id="contact-sub" />
+          <textarea
+            placeholder="write your message "
+            id="contact-msg"
+            required
+          ></textarea>
+          <button >
+            send message <i class="bx bxl-telegram"></i>
+          </button>
+         
+        </form>
+      </section>
+      
+      <section id="footer">
+        <div class="footer-logo">
+          <img src="imgs/imgs/Logo2.png" alt="" />
+        </div>
+
+        <div class="line"></div>
+        <div class="footer-about">
+          <h2>about</h2>
+          <p><i class="bx bx-wink-smile"></i> hassan selim</p>
+          <p><i class="bx bxs-location-plus"></i> alexandria - egypt</p>
+          <p>
+            Graphic designer since 2014. I have extensive experience in
+            designing logos and commercial identities. I am also good at
+            designing all types of prints and advertising designs. I am also
+            good at drawing cartoon characters. Currently, I am working on
+            developing myself in the field of website programming. This site is
+            the beginning of my work.
+          </p>
+        </div>
+        <div class="footer-contact">
+          <h2>contact</h2>
+          <a href="tel:+201098577457"
+            ><i class="bx bx-phone-call"></i> call me</a
+          ><br />
+          <a
+            href="https://api.whatsapp.com/send/?phone=201098577457&text&type=phone_number&app_absent=0"
+            ><i class="bx bxl-whatsapp"></i> send message</a
+          ><br />
+          <a href="mailto:7asandesign@gmail.com"
+            ><i class="bx bx-envelope"></i> send email</a
+          >
+        </div>
+        <div class="social">
+          <h2>accounts</h2>
+          <a href="https://www.facebook.com/7asanselim" target="_blank"
+            ><i class="bx bxl-facebook-circle"></i
+          ></a>
+          <a href="https://instagram.com/7assanselim" target="_blank"
+            ><i class="bx bxl-instagram-alt"></i
+          ></a>
+          <a href="http://www.behance.net/7assanselim" target="_blank"
+            ><i class="bx bxl-behance"></i
+          ></a>
+          <a href="https://dribbble.com/7assanSelim" target="_blank"
+            ><i class="bx bxl-dribbble"></i
+          ></a>
+          <a href="https://github.com/Hassan-Selim" target="_blank"
+            ><i class='bx bxl-github'></i></a>
+          <a href="https://www.linkedin.com/in/7assanselim" target="_blank"
+            ><i class="bx bxl-linkedin-square"></i
+          ></a>
+          <a href="https://hassanselim.blogspot.com/" target="_blank"
+          ><i class='bx bxl-blogger' title="Blogger" ></i></a>
+        </div>
+      </section>
+      <div class="cobyright">
+        <p>copyright © all rights reserved by hassan selim 2024</p>
+      </div>
+      <div id="up">
+        <a href="#"><i class="bx bxs-chevrons-up"></i></a>
+      </div>
+    </div>
+
+    <script src="js/Script2.js"></script>
+    <script src="js/main.js"></script>
+    
+  </body>
+</html>
