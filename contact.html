@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-Dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hassan Selim Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo+Play:wght@200..1000&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <link rel="stylesheet" href="css/Style2.css" />
+
+  <link href="imgs/imgs/Logo2.png" rel="icon" />
+</head>
+
+<body id="body">
+  <div class="bg-color"></div>
+
+  <div class="container">
+    <div class="scroller"></div>
+    <div class="mode">
+      <ul class="settheme">
+        <li>
+          <i id="light" class="bx bxs-sun" data-theme="light"></i>
+        </li>
+        <li>
+          <i id="dark" class="bx bxs-moon" data-theme="dark"></i>
+        </li>
+      </ul>
+    </div>
+    <button class="lang ar" onclick="ar()">ع</button>
+    <header>
+      <div class="navbar">
+        <div class="logo">
+          <img class="l1" src="Logo.png" alt="" />
+          <img class="l2" src="Logo2.png" alt="" />
+          <h1>hassan selim <span>|| portfolio</span></h1>
+        </div>
+        <nav>
+          <a class="active" href="en.html">portfolio</a>
+          <a href="https://hassanselim.blogspot.com/" target="_blank">blog</a>
+        </nav>
+      </div>
+      <div class="navbar2">
+        <div class="logo">
+          <img src="Logo2.png" alt="" />
+          <h1>hassan selim <span>|| portfolio</span></h1>
+        </div>
+        <nav>
+          <a class="active" href="en.html">portfolio</a>
+          <a href="https://hassanselim.blogspot.com/" target="_blank">blog</a>
+        </nav>
+      </div>
+      <div class="navbar3">
+        <i onclick="showNav()" id="menu" class="bx bx-menu"></i>
+        <i id="close" class="bx bx-message-square-x" onclick="closeNav()"></i>
+        <nav class="nav3">
+          <div class="act" onclick="closeNav()">
+            <a class="active" href="en.html">portfolio</a>
+            <a href="https://hassanselim.blogspot.com/" target="_blank">blog</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+
+    <section id="contact" class="section">
+      <h4>contact <span>me!</span></h4>
+      <form id="contact-form">
+        <div class="inp">
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+          <input type="email" id="email" name="email" placeholder="Your Email" required>
+        </div>
+        
+        <input type="subject" id="email" name="subject" placeholder="subject" required>
+
+
+        <textarea id="message" name="message" placeholder="Your Message" rows="6" required></textarea>
+
+        <button type="submit">Send Message</button>
+
+      </form>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/Script2.js"></script>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
