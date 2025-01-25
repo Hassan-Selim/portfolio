@@ -74,7 +74,7 @@ function ar() {
   
 }
 function EN() {
-  location.replace("en.html");
+  location.replace("index.html");
 }
 const scroller = document.querySelector(".scroller");
 const height =
