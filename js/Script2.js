@@ -11,7 +11,6 @@ const dark = document.getElementById("dark");
 const body = document.getElementById("body");
 const about = document.querySelector(".about");
 const up = document.getElementById("up");
-let audio = new Audio("sus.mp3")
 
 /* Change NavBar On Scroll */
 window.onscroll = function () {
@@ -87,3 +86,4 @@ window.addEventListener("scroll", () => {
 
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("nav a");
+
