@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>معرض الأعمال | Hassan Selim - Portfolio</title>
+    <meta name="description" content="استكشف معرض أعمال حسن سليم: تصميم شعارات، هويات بصرية متكاملة، مطبوعات، وتطوير مواقع احترافية. خبرة 10 سنوات في الإسكندرية." />
+    <meta name="author" content="Hassan Selim" />
+    <meta name="keywords" content="معرض أعمال مصمم جرافيك, تصميم لوجو, هوية بصرية كاملة، تصميم مطبوعات، مبرمج فرونت إند، Graphic Design Portfolio, Logo Design Egypt" />
+
+    <meta property="og:title" content="معرض أعمال حسن سليم | Graphic Design & Web Projects" />
+    <meta property="og:description" content="شاهد أحدث المشاريع الإبداعية في التصميم والبرمجة. حلول بصرية مبتكرة لعلامتك التجارية." />
+    <meta property="og:image" content="https://www.hassanselim.art/img/social-preview.webp" />
+    <meta property="og:url" content="https://www.hassanselim.art/projects" />
+    <meta property="og:type" content="portfolio" />
+
+    <link rel="icon" type="image/png" href="../img/Logo.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="../styles.css" />
+    
+    <link rel="canonical" href="https://www.hassanselim.art/projects" />
+
+    <script defer src="../main.js"></script>
+</head>
+
+  <body>
+    <header class="header" id="top">
+      <div class="container header-inner">
+        <a class="brand" href="/" aria-label="Home">
+          <img class="brand-logo" src="../img/Logo.png" alt="Logo" />
+          <span class="brand-name" data-i18n="brand.name">حسن سليم</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <button
+            class="nav-toggle"
+            type="button"
+            data-nav-toggle
+            aria-expanded="false"
+          >
+            <span class="nav-toggleBars" aria-hidden="true"></span>
+            <span class="srOnly" data-i18n="a.menu">القائمة</span>
+          </button>
+          <ul class="nav-list" data-nav-list>
+            <li>
+              <a class="nav-link" href="/" data-i18n="nav.home">الرئيسية</a>
+            </li>
+            <li>
+              <a class="nav-link" href="/#about" data-i18n="nav.about">نبذة</a>
+            </li>
+            <li>
+              <a class="nav-link" href="/#services" data-i18n="nav.services"
+                >الخدمات</a
+              >
+            </li>
+            <li>
+              <a class="nav-link" href="/#projects" data-i18n="nav.projects"
+                >المشاريع</a
+              >
+            </li>
+            <li>
+              <a class="nav-link" href="/#blog" data-i18n="nav.blog">المدونة</a>
+            </li>
+            <li>
+              <a class="nav-link" href="/#contact" data-i18n="nav.contact"
+                >تواصل</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <div class="actions">
+          <button class="chip" type="button" data-theme-toggle>
+            <span class="chip-icon" aria-hidden="true">◐</span>
+            <span class="chip-text" data-i18n="actions.theme">المظهر</span>
+          </button>
+          <button class="chip" type="button" data-lang-toggle>
+            <span class="chip-icon" aria-hidden="true">A/ع</span>
+            <span class="chip-text" data-i18n="actions.lang">اللغة</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <section class="section" id="portfolio">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title" data-i18n="section-head">معرض الأعمال</h2>
+          <p class="section-desc" data-i18n="section-desc">
+            تصفح أحدث مشاريعي في مختلف مجالات التصميم.
+          </p>
+        </div>
+
+        <div class="portfolio-filters">
+          <button class="filter-btn say-hello-btn active" data-filter="all">
+            <i class="bx bx-grid-alt"></i
+            ><span data-i18n="about.pill0">كل المشاريع</span>
+          </button>
+          <button class="filter-btn say-hello-btn" data-filter="logo">
+            <i class="bx bx-palette"></i>
+            <span data-i18n="about.pill2">شعارات وهوية</span>
+          </button>
+          <button class="filter-btn say-hello-btn" data-filter="print">
+            <i class="bx bx-printer"></i>
+            <span data-i18n="about.pill3">مطبوعات</span>
+          </button>
+          <button class="filter-btn say-hello-btn" data-filter="social">
+            <i class="bx bx-share-alt"></i>
+            <span data-i18n="about.pill4">سوشيال ميديا</span>
+          </button>
+        </div>
+
+        <div class="portfolio-grid">
+          <div
+            class="portfolio-card logo reveal-item"
+            data-mockup="../img/Projects/everxt2.webp"
+          >
+            <div class="card-image">
+              <img src="../img/Projects/everxt.webp" alt="تصميم شعار" />
+            </div>
+            <div class="card-info">
+              <h3>Everxt Company</h3>
+              <span>Visual Identity</span>
+            </div>
+          </div>
+          <div
+            class="portfolio-card logo reveal-item"
+            data-mockup="../img/Projects/aqar2.webp"
+          >
+            <div class="card-image">
+              <img src="../img/Projects/aqar1.webp" alt="تصميم شعار" />
+            </div>
+            <div class="card-info">
+              <h3>Aqar Square</h3>
+              <span>Logo Design</span>
+            </div>
+          </div>
+          <div
+            class="portfolio-card logo reveal-item"
+            data-mockup="../img/Projects/she2.webp"
+          >
+            <div class="card-image">
+              <img src="../img/Projects/she.webp" alt="تصميم شعار" />
+            </div>
+            <div class="card-info">
+              <h3>تصميم شعار هي للملابس النسائية</h3>
+              <span>Logo Design</span>
+            </div>
+          </div>
+          <div
+            class="portfolio-card logo reveal-item"
+            data-mockup="../img/Projects/piraeus2.webp"
+          >
+            <div class="card-image">
+              <img src="../img/Projects/piraeus1.webp" alt="تصميم شعار" />
+            </div>
+            <div class="card-info">
+              <h3>piraeus Sporting Academy</h3>
+              <span>Visual Identity</span>
+            </div>
+          </div>
+          <div
+            class="portfolio-card logo reveal-item"
+            data-mockup="../img/Projects/forsa2.webp"
+          >
+            <div class="card-image">
+              <img src="../img/Projects/forsa1.webp" alt="تصميم شعار" />
+            </div>
+            <div class="card-info">
+              <h3>تصميم شعار فرصة للتقسيط</h3>
+              <span>Logo Design</span>
+            </div>
+          </div>
+          <div
+            class="portfolio-card logo reveal-item"
+            data-mockup="../img/Projects/mw2.webp"
+          >
+            <div class="card-image">
+              <img src="../img/Projects/mw.webp" alt="تصميم شعار" />
+            </div>
+            <div class="card-info">
+              <h3>media way marketing</h3>
+              <span>Logo Design</span>
+            </div>
+          </div>
+
+          <div
+            class="portfolio-card print reveal-item"
+            data-mockup="../img/projects/menu2.webp">
+            <div class="card-image">
+              <img src="../img/Projects/menu.webp" alt="تصميم مطبوعات" />
+            </div>
+            <div class="card-info">
+              <h3>منيو مطعم</h3>
+              <span>مطبوعات</span>
+            </div>
+          </div>
+          <div
+            class="portfolio-card print reveal-item"
+            data-mockup="../img/projects/flyer2.webp">
+            <div class="card-image">
+              <img src="../img/Projects/flyer.jpg" alt="تصميم مطبوعات" />
+            </div>
+            <div class="card-info">
+              <h3>تصميم بروشور دعائى</h3>
+              <span>مطبوعات</span>
+            </div>
+          </div>
+          <div
+            class="portfolio-card print reveal-item"
+            data-mockup="../img/projects/magazine2.webp">
+            <div class="card-image">
+              <img src="../img/Projects/magazine.webp" alt="تصميم مطبوعات" />
+            </div>
+            <div class="card-info">
+              <h3>تصميم مجلة إعلانية</h3>
+              <span>مطبوعات</span>
+            </div>
+          </div>
+
+          <div
+            class="portfolio-card social reveal-item"
+            data-mockup="../img/projects/janssen2.webp"
+          >
+            <div class="card-image">
+              <img
+                src="../img/Projects/janssen.webp"
+                alt="تصميم سوشيال ميديا"
+              />
+            </div>
+            <div class="card-info">
+              <h3>حملة تسويقية لمراتب يانسن</h3>
+              <span>سوشيال ميديا</span>
+            </div>
+          </div>
+          <div
+            class="portfolio-card social reveal-item"
+            data-mockup="../img/projects/deeb2.webp"
+          >
+            <div class="card-image">
+              <img
+                src="../img/Projects/deeb.webp"
+                alt="تصميم سوشيال ميديا"
+              />
+            </div>
+            <div class="card-info">
+              <h3>حملة تسويقية لمكتب ديب تك</h3>
+              <span>سوشيال ميديا</span>
+            </div>
+          </div>
+          <div
+            class="portfolio-card social reveal-item"
+            data-mockup="../img/projects/collection2.webp"
+          >
+            <div class="card-image">
+              <img
+                src="../img/Projects/collection.webp"
+                alt="تصميم سوشيال ميديا"
+              />
+            </div>
+            <div class="card-info">
+              <h3>تصميمات سوشيال ميديا متنوعة</h3>
+              <span>سوشيال ميديا</span>
+            </div>
+          </div>
+          <div
+            class="portfolio-card social reveal-item"
+            data-mockup="../img/projects/dental2.webp"
+          >
+            <div class="card-image">
+              <img
+                src="../img/Projects/dental.webp"
+                alt="تصميم سوشيال ميديا"
+              />
+            </div>
+            <div class="card-info">
+              <h3>حملة تسويقية لعيادة أسنان</h3>
+              <span>سوشيال ميديا</span>
+            </div>
+          </div>
+          <div
+            class="portfolio-card social reveal-item"
+            data-mockup="../img/projects/ward2.webp"
+          >
+            <div class="card-image">
+              <img
+                src="../img/Projects/ward.webp"
+                alt="تصميم سوشيال ميديا"
+              />
+            </div>
+            <div class="card-info">
+              <h3>حملة تسويقية لمطعم ورد الشام</h3>
+              <span>سوشيال ميديا</span>
+            </div>
+          </div>
+          <div
+            class="portfolio-card social reveal-item"
+            data-mockup="../img/projects/doctor2.webp"
+          >
+            <div class="card-image">
+              <img
+                src="../img/Projects/doctor.webp"
+                alt="تصميم سوشيال ميديا"
+              />
+            </div>
+            <div class="card-info">
+              <h3>حملة تسويقية لمجالات طبية</h3>
+              <span>سوشيال ميديا</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="project-modal" id="projectModal">
+      <div class="modal-backdrop" id="modalBackdrop"></div>
+
+      <div class="modal-content">
+        <button class="close-modal" id="closeModal">&times;</button>
+
+        <div class="modal-image-wrapper">
+          <div class="loader" id="modalLoader"></div>
+          <img id="modalImage" src="" alt="Project Mockup" />
+        </div>
+
+        <div class="modal-details">
+          <h3 id="modalTitle">اسم المشروع</h3>
+          <span id="modalCategory">نوع المشروع</span>
+        </div>
+      </div>
+    </div>
+
+    <a class="toTop" href="#">
+   <i class="bx bx-chevron-up-circle"></i>
+</a>
+<script src="../main.js"></script>
+  </body>
+</html>

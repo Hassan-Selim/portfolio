@@ -1,0 +1,939 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Hassan Selim | Creative Graphic Designer & Web Developer</title>
+    <meta name="description" content="Hassan Selim is a professional Graphic Designer in Alexandria with 10+ years of experience in Branding, Logo Design, and Web Development. Explore my creative portfolio." />
+    <meta name="keywords" content="Graphic Designer Alexandria, Branding, Logo Design Egypt, Web Developer, Hassan Selim Design, مصمم جرافيك الإسكندرية, تصميم شعارات" />
+    <meta name="author" content="Hassan Selim" />
+    <meta name="robots" content="index, follow" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hassanselim.art/" />
+    <meta property="og:title" content="Hassan Selim | Creative Portfolio" />
+    <meta property="og:description" content="10+ Years of experience in Branding & Design. Check out my latest projects." />
+    <meta property="og:image" content="https://hassanselim.art/img/Logo.png" /> <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Hassan Selim | Creative Portfolio" />
+    <meta name="twitter:image" content="https://hassanselim.art/img/Logo.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="img/Logo.png" /> 
+    
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="canonical" href="https://hassanselim.art/" />
+
+    <script defer src="main.js"></script>
+</head>
+  <body>
+    <a class="skip" href="#home" data-i18n="a.skip">تخطي إلى المحتوى</a>
+
+    <header class="header" id="top">
+      <div class="container header-inner">
+        <a class="brand" href="#home" aria-label="Home">
+          <img class="brand-logo" src="./img/Logo.png" alt="Logo" />
+          <span class="brand-name" data-i18n="brand.name">حسن سليم</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <button
+            class="nav-toggle"
+            type="button"
+            data-nav-toggle
+            aria-expanded="false"
+          >
+            <span class="nav-toggleBars" aria-hidden="true"></span>
+            <span class="srOnly" data-i18n="a.menu">القائمة</span>
+          </button>
+          <ul class="nav-list" data-nav-list>
+            <li>
+              <a class="nav-link" href="#home" data-i18n="nav.home">الرئيسية</a>
+            </li>
+            <li>
+              <a class="nav-link" href="#about" data-i18n="nav.about">نبذة</a>
+            </li>
+            <li>
+              <a class="nav-link" href="#services" data-i18n="nav.services"
+                >الخدمات</a
+              >
+            </li>
+            <li>
+              <a class="nav-link" href="#projects" data-i18n="nav.projects"
+                >المشاريع</a
+              >
+            </li>
+            <li>
+              <a class="nav-link" href="#blog" data-i18n="nav.blog">المدونة</a>
+            </li>
+            <li>
+              <a class="nav-link" href="#contact" data-i18n="nav.contact"
+                >تواصل</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <div class="actions">
+          <button class="chip" type="button" data-theme-toggle>
+            <span class="chip-icon" aria-hidden="true">◐</span>
+            <span class="chip-text" data-i18n="actions.theme">المظهر</span>
+          </button>
+          <button class="chip" type="button" data-lang-toggle>
+            <span class="chip-icon" aria-hidden="true">A/ع</span>
+            <span class="chip-text" data-i18n="actions.lang">اللغة</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero scroll-reveal" id="home">
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <p class="badge" data-i18n="hero.badge">مصمم جرافيك</p>
+            <h1 class="hero-title">
+              <span data-i18n="hero.hello">مرحبًا، أنا</span>
+              <span class="grad" data-i18n="hero.name">حسن سليم</span>
+            </h1>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">
+              مرحبا بكم في معرضي الشخصي المتواضع ستجد هنا بعض المعلومات الشخصية
+              عني وعن أعمالي واهتماماتي وبعض أعمالي من خلال هذا الموقع، يمكنك
+              الاطلاع على الأعمال التي أنجزتها، بالإضافة إلى إمكانية إرسال طلبات
+              التصميم و المراسلات الشخصية.
+            </p>
+
+            <div class="hero-cta">
+              <a
+                class="btn btn--primary"
+                href="#projects"
+                data-i18n="hero.ctaProjects"
+                >شاهد أعمالي</a
+              >
+              <a
+                class="btn btn--ghost"
+                href="#contact"
+                data-i18n="hero.ctaContact"
+                >تواصل معي</a
+              >
+            </div>
+
+            <dl class="stats" aria-label="Highlights">
+              <div class="stats-item">
+                <dt class="stats-k" data-i18n="stats.yearsK">سنوات خبرة</dt>
+                <dd class="stats-v" data-i18n="stats.yearsV">+10</dd>
+              </div>
+              <div class="stats-item">
+                <dt class="stats-k" data-i18n="stats.focusK">التخصص</dt>
+                <dd class="stats-v" data-i18n="stats.focusV">هوية + شعارات</dd>
+              </div>
+              <div class="stats-item">
+                <dt class="stats-k" data-i18n="stats.locationK">الموقع</dt>
+                <dd class="stats-v" data-i18n="stats.locationV">
+                  الإسكندرية — مصر
+                </dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="hero-visual" aria-label="Profile image">
+            <div class="portrait">
+              <img src="./img/profile.webp" alt="Profile" />
+            </div>
+            <div class="glow" aria-hidden="true"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section scroll-reveal" id="about">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title" data-i18n="about.title">نبذة عني</h2>
+            <p class="section-desc" data-i18n="about.desc">
+              خبرة طويلة في تصميم الشعارات والهوية التجارية والمطبوعات
+              والإعلانات.
+            </p>
+          </div>
+
+          <div class="about">
+            <div class="card card--soft">
+              <h3 class="card-title" data-i18n="about.cardTitle">من أنا؟</h3>
+              <p class="card-text" data-i18n="about.p1"></p>
+
+              <a
+                href="./img/HasssnSelim-CV.jpg"
+                download="Hassan_Selim_CV.jpg"
+                class="btn-download-cv"
+              ><span data-i18n="download.btn">تحميل السيرة الذاتية</span>
+                <i class="bx bx-cloud-download"></i> 
+              </a>
+
+              <div class="pillRow">
+                <span class="pill" data-i18n="about.pill1">Branding</span>
+                <span class="pill" data-i18n="about.pill2">Logo Design</span>
+                <span class="pill" data-i18n="about.pill3">Print</span>
+                <span class="pill" data-i18n="about.pill4">Social Media</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3 class="card-title" data-i18n="skills.title">المهارات</h3>
+              <div class="skills">
+                <div class="skills-group">
+                  <p class="skills-label" data-i18n="skills.design">التصميم</p>
+                  <div class="skills-bars">
+                    <div class="bar">
+                      <span data-i18n="skills.ps">Photoshop</span>
+                      <i style="--w: 92%"></i>
+                    </div>
+                    <div class="bar">
+                      <span data-i18n="skills.ai">Illustrator</span>
+                      <i style="--w: 90%"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="skills-group">
+                  <p class="skills-label" data-i18n="skills.frontend">
+                    Front-end
+                  </p>
+                  <div class="skills-bars">
+                    <div class="bar">
+                      <span data-i18n="skills.html"
+                        >HTML + CSS + JavaScript</span
+                      >
+                      <i style="--w: 55%"></i>
+                    </div>
+                  </div>
+                  <p class="hint" data-i18n="skills.progressHint">
+                    (قيد التطوير)
+                  </p>
+                </div>
+                <div class="skills-group">
+                  <p class="skills-label" data-i18n="skills.office">
+                    Microsoft Office
+                  </p>
+                  <div class="skills-bars">
+                    <div class="bar">
+                      <span data-i18n="skills.excel">Excel</span>
+                      <i style="--w: 75%"></i>
+                    </div>
+                    <div class="bar">
+                      <span data-i18n="skills.word">Word</span>
+                      <i style="--w: 75%"></i>
+                    </div>
+                    <div class="bar">
+                      <span data-i18n="skills.pp">PowerPoint</span>
+                      <i style="--w: 70%"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a
+                class="btn btn--primary btn--block"
+                href="#contact"
+                data-i18n="about.cta"
+              >
+                اطلب تصميم / تواصل
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section scroll-reveal" id="services">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title" data-i18n="services.title">الخدمات</h2>
+            <p class="section-desc" data-i18n="services.desc">
+              خدمات تصميم احترافية تركز على الجودة والسرعة وتحقيق أهدافك
+              التسويقية.
+            </p>
+          </div>
+
+          <div class="grid3">
+            <article class="tile">
+              <div class="tile-icon" aria-hidden="true">✦</div>
+              <h3 class="tile-title" data-i18n="services.s1.title">
+                تصميم شعار وهوية
+              </h3>
+              <p class="tile-text" data-i18n="services.s1.text">
+                تصميم وتنفيذ كل أنواع الشعارات والهوية التجارية باحترافية
+                وإتقان.
+              </p>
+              <a
+                href="/projects"
+                data-i18n="services.a.cta"
+                class="btn"
+                target="_blank"
+                >عرض المزيد</a
+              >
+            </article>
+
+            <article class="tile">
+              <div class="tile-icon" aria-hidden="true">▦</div>
+              <h3 class="tile-title" data-i18n="services.s2.title">
+                مطبوعات وإعلانات
+              </h3>
+              <p class="tile-text" data-i18n="services.s2.text">
+                تصميم جميع أنواع المطبوعات مثل البنرات والمجلات والإعلانات
+                الورقية.
+              </p>
+              <a
+                href="/projects"
+                data-i18n="services.a.cta"
+                class="btn"
+                target="_blank"
+                >عرض المزيد</a
+              >
+            </article>
+
+            <article class="tile">
+              <div class="tile-icon" aria-hidden="true">◎</div>
+              <h3 class="tile-title" data-i18n="services.s3.title">
+                سوشيال ميديا
+              </h3>
+              <p class="tile-text" data-i18n="services.s3.text">
+                تصميم منشورات جذابة تهدف لتحقيق نتائج تسويقية قوية ومستمرة.
+              </p>
+              <a
+                href="/projects"
+                data-i18n="services.a.cta"
+                class="btn"
+                target="_blank"
+                >عرض المزيد</a
+              >
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section scroll-reveal" id="projects">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title" data-i18n="projects.title">
+              أحدث المشاريع
+            </h2>
+            <p class="section-desc" data-i18n="projects.desc"></p>
+          </div>
+
+          <div class="grid3">
+            <article class="project">
+              <img
+                src="img/Projects/everxt.webp"
+                loading="lazy"
+                alt="EVERXT"
+                class="project-img"
+              />
+
+              <div class="project-body project-cover--a">
+                <h3 class="project-title">EVERXT</h3>
+
+                <div class="project-details">
+                  <p class="project-meta" data-i18n="projects.p1">
+                    هوية تجارية — تقنية
+                  </p>
+                  <a
+                    class="btn"
+                    href="https://hassanselim.blogspot.com/2024/10/everxt.html"
+                    target="_blank"
+                    data-i18n="services.a.cta"
+                    >عرض المزيد</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article class="project">
+              <img
+                src="img/Projects/aqar.webp"
+                loading="lazy"
+                alt="Aqar Square"
+                class="project-img"
+              />
+
+              <div class="project-body project-cover--b">
+                <h3 class="project-title">Aqar Square</h3>
+
+                <div class="project-details">
+                  <p class="project-meta" data-i18n="projects.p2">
+                    هوية تجارية — تقنية
+                  </p>
+                  <a
+                    class="btn"
+                    href="https://hassanselim.blogspot.com/2023/09/aqar-square.html"
+                    target="_blank"
+                    data-i18n="services.a.cta"
+                    >عرض المزيد</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article class="project">
+              <img
+                src="img/Projects/piraeus.webp"
+                loading="lazy"
+                alt="piraeus"
+                class="project-img"
+              />
+
+              <div class="project-body project-cover--c">
+                <h3 class="project-title">Piraeus</h3>
+
+                <div class="project-details">
+                  <p class="project-meta" data-i18n="projects.p3">
+                    هوية تجارية — تقنية
+                  </p>
+                  <a
+                    class="btn"
+                    href="https://hassanselim.blogspot.com/2020/12/piraeus-academy.html"
+                    target="_blank"
+                    data-i18n="services.a.cta"
+                    >عرض المزيد</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article class="project">
+              <img
+                src="img/Projects/magazin.webp"
+                loading="lazy"
+                alt="Advertizing Magazine"
+                class="project-img"
+              />
+
+              <div class="project-body project-cover--d">
+                <h3 class="project-title">Advertizing Magazine</h3>
+
+                <div class="project-details">
+                  <p class="project-meta" data-i18n="projects.p4">
+                    هوية تجارية — تقنية
+                  </p>
+                  <a
+                    class="btn"
+                    href="https://hassanselim.blogspot.com/2023/10/magazine.html"
+                    target="_blank"
+                    data-i18n="services.a.cta"
+                    >عرض المزيد</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article class="project">
+              <img
+                src="img/Projects/she.webp"
+                loading="lazy"
+                alt="She"
+                class="project-img"
+              />
+
+              <div class="project-body project-cover--e">
+                <h3 class="project-title">She Women Brand</h3>
+
+                <div class="project-details">
+                  <p class="project-meta" data-i18n="projects.p5">
+                    هوية تجارية — تقنية
+                  </p>
+                  <a
+                    class="btn"
+                    href="https://hassanselim.blogspot.com/2024/05/she.html"
+                    target="_blank"
+                    data-i18n="services.a.cta"
+                    >عرض المزيد</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article class="project">
+              <img
+                src="img/Projects/forsa.webp"
+                loading="lazy"
+                alt="Forsa"
+                class="project-img"
+              />
+
+              <div class="project-body project-cover--f">
+                <h3 class="project-title">Forsa</h3>
+
+                <div class="project-details">
+                  <p class="project-meta" data-i18n="projects.p6">
+                    هوية تجارية — تقنية
+                  </p>
+                  <a
+                    class="btn"
+                    href="https://hassanselim.blogspot.com/2024/10/forsa.html"
+                    target="_blank"
+                    data-i18n="services.a.cta"
+                    >عرض المزيد</a
+                  >
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section scroll-reveal" id="blog">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title" data-i18n="blog.title">المدونة</h2>
+            <p class="section-desc" data-i18n="blog.desc">
+              مساحة لمشاركة أفكار ونصائح تهم المصمم والعميل
+            </p>
+          </div>
+
+          <div class="blog-slider-wrapper" dir="rtl">
+            <button class="slider-arrow next-arrow" aria-label="التالي">
+              ❮
+            </button>
+
+            <div class="blog-slider-track" id="blog-container">
+              <article class="post blog-item hidden-post">
+                <div class="post-img-wrapper">
+                  <img src="img/Projects/b1.webp" alt="كبر اللوجو" />
+                </div>
+
+                <div class="post-content">
+                  <h3 class="post-title">
+                    كبر اللوجو .. الطلب اللي بيخوف أي مصمم 😂
+                  </h3>
+                  <p class="post-text">
+                    كبر اللوجو شوية! "الجملة اللي بتخوف أي مصمم" لو انت مصمم
+                    جرافيك لازم تكون سمعت جملة مشهورة أي مصمم تقريبًا سمعها من
+                    عميل مرة أو ا...
+                  </p>
+                  <a
+                    class="btn"
+                    target="_blank"
+                    href="https://hassanselim.blogspot.com/2025/09/make-logo-bigger.html"
+                    >قراءة المقال</a
+                  >
+                </div>
+              </article>
+
+              <article class="post blog-item hidden-post">
+                <div class="post-img-wrapper">
+                  <img src="img/Projects/b2.webp" alt="تعديلات التصميم" />
+                </div>
+
+                <div class="post-content">
+                  <h3 class="post-title">
+                    التعديلات.. الشبح المرعب للمصممين 👻
+                  </h3>
+                  <p class="post-text">
+                    يعني لو فيه كلمة بتخلي قلب أي مصمم يقع في رجله فهي كلمة:
+                    "ممكن تعدل حتة صغيرة بس؟". 😁 التعديلات مش دايمًا مشكلة،
+                    بالعكس أحيانًا بتكون فرصة لتطوير الفكرة ..
+                  </p>
+                  <a
+                    class="btn"
+                    target="_blank"
+                    href="https://hassanselim.blogspot.com/2025/08/edits-nightmare-for-designers.html"
+                    >قراءة المقال</a
+                  >
+                </div>
+              </article>
+              <article class="post blog-item hidden-post">
+                <div class="post-img-wrapper">
+                  <img src="img/Projects/b3.webp" alt="استلهام" />
+                </div>
+
+                <div class="post-content">
+                  <h3 class="post-title">
+                    استلهام ولا تغذية بصرية ولا سرقة أعمال!!🤔
+                  </h3>
+                  <p class="post-text">
+                    الاستلهام هو الشرارة اللي بتخليك تبدأ فكرة. ممكن ييجي من
+                    تصميم شوفته على Behance أو Dribbble، أو حتى من لوحة في
+                    الشارع أو إعلان على التلفزيون. الفكرة هنا مش إنك..
+                  </p>
+                  <a
+                    class="btn"
+                    target="_blank"
+                    href="https://hassanselim.blogspot.com/2025/08/inspiration-vs-visual-theft.html"
+                    >قراءة المقال</a
+                  >
+                </div>
+              </article>
+              <article class="post blog-item hidden-post">
+                <div class="post-img-wrapper">
+                  <img src="img/Projects/b4.webp" alt="التخصيص" />
+                </div>
+
+                <div class="post-content">
+                  <h3 class="post-title">هل التخصص في التصميم مهم ولا لأ؟</h3>
+                  <p class="post-text">
+                    لما تختار مجال زي تصميم الشعارات مثلًا، بتدخل فيه بعمق.
+                    بتتعلم كل تفاصيله: اختيار الألوان المناسبة، الخطوط، الرموز،
+                    وإزاي تبني هوية بصرية تفضل عالقة في أذهان الناس...
+                  </p>
+                  <a
+                    class="btn"
+                    target="_blank"
+                    href="https://hassanselim.blogspot.com/2025/08/graphic-design-specialization.html"
+                    >قراءة المقال</a
+                  >
+                </div>
+              </article>
+
+              <article class="post blog-item hidden-post">
+                <div class="post-img-wrapper">
+                  <img src="img/Projects/b5.webp" alt="الجانب المظلم" />
+                </div>
+
+                <div class="post-content">
+                  <h3 class="post-title">الجانب المظلم للجرافيك ديزاين 🖤</h3>
+                  <p class="post-text">
+                    كتير من الناس فاكرين إن شغل المصمم كله متعة وإبداع، لابتوب
+                    شيك وكوب قهوة وصور ملهمة على إنستجرام...
+                  </p>
+                  <a
+                    class="btn"
+                    target="_blank"
+                    href="https://hassanselim.blogspot.com/2025/08/graphic-dark-mode.html"
+                    >قراءة المقال</a
+                  >
+                </div>
+              </article>
+
+              <article class="post blog-item hidden-post">
+                <div class="post-img-wrapper">
+                  <img src="img/Projects/b6.webp" alt="أهمية التسويق" />
+                </div>
+
+                <div class="post-content">
+                  <h3 class="post-title">
+                    ليه لازم أي مصمم جرافيك يتعلم تسويق؟
+                  </h3>
+                  <p class="post-text">
+                    ناس كتير فاكرة إن شغل مصمم الجرافيك كله عبارة عن ألوان
+                    وأشكال وابتكارات، وإن شغلته إنه "يعمل التصميم يبان شيك". بس
+                    الحقيقة إن..
+                  </p>
+                  <a
+                    class="btn"
+                    target="_blank"
+                    href="https://hassanselim.blogspot.com/2025/08/marketing-for-designers.html"
+                    >قراءة المقال</a
+                  >
+                </div>
+              </article>
+
+              <article class="post blog-item hidden-post">
+                <div class="post-img-wrapper">
+                  <img src="img/Projects/b7.webp" alt="أهيمة الموهبة" />
+                </div>
+
+                <div class="post-content">
+                  <h3 class="post-title">
+                    هل التصميم محتاج موهبة ولا ممكن أي حد يتعلمه؟
+                  </h3>
+                  <p class="post-text">
+                    فيه سؤال بيتكرر دايمًا وسط أي نقاش عن التصميم: "هو لازم أكون
+                    موهوب عشان أبقى مصمم ناجح؟ ولا لو اتعلمت الأدوات والدروس
+                    أقدر أدخل المجال ده من غير ما يكون عندي موهبة بالفطرة؟"..
+                  </p>
+                  <a
+                    class="btn"
+                    target="_blank"
+                    href="https://hassanselim.blogspot.com/2025/08/design-vs-talent.html"
+                    >قراءة المقال</a
+                  >
+                </div>
+              </article>
+
+              <article class="post blog-item hidden-post">
+                <div class="post-img-wrapper">
+                  <img src="img/Projects/b8.webp" alt="الإلهام الفني" />
+                </div>
+
+                <div class="post-content">
+                  <h3 class="post-title">
+                    هل الإلهام بييجي فجأة ولا بيتصنع؟ اصنع إلهامك 😉
+                  </h3>
+                  <p class="post-text">
+                    كتير من المصممين والمبدعين بيسألوا نفس السؤال: "هو الإلهام
+                    ده حاجة بتقع علينا فجأة زي البرق؟ ولا ممكن نصنعه ونحضره
+                    بنفسنا؟". الحقيقة إن الإلهام مش مجرد فكرة عابرة، ولا هو سحر
+                    غامض، لكنه نتيجة مزيج بين الاستعداد، التجربة، والملاحظة. ..
+                  </p>
+                  <a
+                    class="btn"
+                    target="_blank"
+                    href="https://hassanselim.blogspot.com/2025/08/inspiration.html"
+                    >قراءة المقال</a
+                  >
+                </div>
+              </article>
+
+              <article class="post blog-item hidden-post">
+                <div class="post-img-wrapper">
+                  <img src="img/Projects/b9.webp" alt="العميل الأول" />
+                </div>
+
+                <div class="post-content">
+                  <h3 class="post-title">
+                    أول عميل في حياتك كمصمم: مواقف مش هتتنسا
+                  </h3>
+                  <p class="post-text">
+                    و سألت أي مصمم جرافيك عن أول عميل اشتغل معاه في حياته،
+                    هتلاقي إن رد فعله بيكون يا إما ضحك هستيري، يا إما تنهيدة
+                    طويلة من القلب. 😅..
+                  </p>
+                  <a
+                    class="btn"
+                    target="_blank"
+                    href="https://hassanselim.blogspot.com/2025/08/first-client.html"
+                    >قراءة المقال</a
+                  >
+                </div>
+              </article>
+
+              <article class="post blog-item hidden-post">
+                <div class="post-img-wrapper">
+                  <img src="img/Projects/b10.webp" alt="العميل والمصمم" />
+                </div>
+
+                <div class="post-content">
+                  <h3 class="post-title">هل فعلاً العميل مش فاهم التصميم؟</h3>
+                  <p class="post-text">
+                    كتير بنسمع المصممين بيقولوا: "العميل مش فاهم حاجة في
+                    التصميم"، بس هل ده صحيح في كل الحالات؟ ولا ممكن إحنا كمصممين
+                    أحياناً بنعرض الفكرة بشكل معقد يخلي العميل مش قادر
+                    يستوعبها؟..
+                  </p>
+                  <a
+                    class="btn"
+                    target="_blank"
+                    href="https://hassanselim.blogspot.com/2025/08/client-mean.html"
+                    >قراءة المقال</a
+                  >
+                </div>
+              </article>
+
+              <article class="post blog-item hidden-post">
+                <div class="post-img-wrapper">
+                  <img src="img/Projects/b11.webp" alt="العربون حقك المصمم" />
+                </div>
+
+                <div class="post-content">
+                  <h3 class="post-title">العربون حقك وليس رفاهية 💰😉</h3>
+                  <p class="post-text">
+                    لو اشتغلت يوم واحد "فريلانسر" أو مصمم حر، أكيد عرفت الجملة
+                    المشهورة:.
+                  </p>
+                  <a
+                    class="btn"
+                    target="_blank"
+                    href="https://hassanselim.blogspot.com/2025/08/deposit.html"
+                    >قراءة المقال</a
+                  >
+                </div>
+              </article>
+
+              <article class="post blog-item hidden-post">
+                <div class="post-img-wrapper">
+                  <img src="img/Projects/b11.webp" alt="فن فهم العميل" />
+                </div>
+
+                <div class="post-content">
+                  <h3 class="post-title">
+                    حلول ذكية لطلبات العملاء الغريبة 😉
+                  </h3>
+                  <p class="post-text">
+                    مبروك! أنت رسميًا دخلت عالم طلبات العملاء الغريبة اللي
+                    أحيانًا بتحس إنها جاية من كوكب تاني 😂🚀 في المقال ده،
+                    هنستعرض أغرب الطلبات.
+                  </p>
+                  <a
+                    class="btn"
+                    target="_blank"
+                    href="https://hassanselim.blogspot.com/2025/08/strange-clients.html"
+                    >قراءة المقال</a
+                  >
+                </div>
+              </article>
+            </div>
+
+            <button class="slider-arrow prev-arrow" aria-label="السابق">
+              ❯
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section scroll-reveal" id="contact">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title" data-i18n="contact.title">تواصل</h2>
+            <p class="section-desc" data-i18n="contact.desc">
+              أرسل رسالة سريعة أو اطلب تصميمًا، وسأعود لك في أقرب وقت.
+            </p>
+          </div>
+
+          <div class="contact">
+            <div class="card">
+              <h3 class="card-title" data-i18n="contact.direct">
+                بيانات التواصل
+              </h3>
+              <ul class="contactList">
+                <li>
+                  <span class="contactList-k" data-i18n="contact.cityK"
+                    >الموقع</span
+                  >
+                  <span class="contactList-v" data-i18n="contact.cityV"
+                    >الإسكندرية — مصر</span
+                  >
+                </li>
+                <li>
+                  <span class="contactList-k" data-i18n="contact.callK"
+                    >اتصال</span
+                  >
+                  <a
+                    class="contactList-v link"
+                    href="tel:+201098577457"
+                    data-i18n="contact.callV"
+                    >+20 109 857 7457</a
+                  >
+                </li>
+                <li>
+                  <span class="contactList-k" data-i18n="contact.emailK"
+                    >بريد</span
+                  >
+                  <a
+                    class="contactList-v link"
+                    href="mailto:7asandesign@gmail.com"
+                    data-i18n="contact.emailV"
+                    >7asandesign@gmail.com</a
+                  >
+                </li>
+                <li>
+                  <span class="contactList-k" data-i18n="contact.socialK"
+                    >حساباتي</span
+                  >
+                  <div class="contactList-v social">
+                    <a
+                      class="link"
+                      href="http://www.behance.net/7assanselim"
+                      target="_blank"
+                      ><img class="link-icon" src="img/be.svg" alt="Behance"
+                    /></a>
+                    <a
+                      class="link"
+                      href="http://www.linkedin.com/in/7assanselim"
+                      target="_blank"
+                      ><img class="link-icon" src="img/in.svg" alt="LinkedIn"
+                    /></a>
+                    <a
+                      class="link"
+                      href="http://www.facebook.com/7asanselim"
+                      target="_blank"
+                      ><img class="link-icon" src="img/fb.svg" alt="Facebook"
+                    /></a>
+                    <a
+                      class="link"
+                      href="http://www.instagram.com/7assanselim"
+                      target="_blank"
+                      ><img class="link-icon" src="img/ig.svg" alt="Instagram"
+                    /></a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <form class="card" id="contactForm" novalidate>
+              <h3 class="card-title" data-i18n="contact.formTitle">
+                أرسل رسالة
+              </h3>
+
+              <input
+                type="hidden"
+                name="access_key"
+                value="43470b54-1567-4b59-9c88-76d9d3cdb7ff"
+              />
+
+              <input
+                type="hidden"
+                name="from_name"
+                value="New Message from Portfolio"
+              />
+
+              <label class="field">
+                <span class="field-label" data-i18n="contact.name">الاسم</span>
+                <input
+                  class="field-input"
+                  name="name"
+                  type="text"
+                  autocomplete="name"
+                  required
+                />
+              </label>
+
+              <label class="field">
+                <span class="field-label" data-i18n="contact.subject"
+                  >الموضوع</span
+                >
+                <input
+                  class="field-input"
+                  name="subject"
+                  type="text"
+                  required
+                />
+              </label>
+
+              <label class="field">
+                <span class="field-label" data-i18n="contact.message"
+                  >الرسالة</span
+                >
+                <textarea
+                  class="field-input field-textarea"
+                  name="message"
+                  rows="5"
+                  required
+                ></textarea>
+              </label>
+
+              <button
+                class="btn btn--primary btn--block"
+                type="submit"
+                data-i18n="contact.send"
+              >
+                إرسال
+              </button>
+
+              <p
+                id="form-result"
+                style="text-align: center; margin-top: 15px; font-size: 0.9rem"
+              ></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <img class="footer-logo" src="./img/Logo.png" alt="Logo" />
+          <div>
+            <p class="footer-name" data-i18n="brand.name">حسن سليم</p>
+            <p class="footer-copy" data-i18n="footer.copy">
+              © كل الحقوق محفوظة 2026
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <a class="toTop" href="/">
+   <i class="bx bx-chevron-up-circle"></i>
+</a>
+  </body>
+</html>
