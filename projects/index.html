@@ -21,7 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" media="print" onload="this.media='all'">
 
     <link rel="stylesheet" href="../styles.css" />
     
@@ -34,7 +34,7 @@
     <header class="header" id="top">
       <div class="container header-inner">
         <a class="brand" href="/" aria-label="Home">
-          <img class="brand-logo" src="../img/Logo.png" alt="Logo" />
+          <img loading="lazy" class="brand-logo" src="../img/Logo.png" alt="Logo" />
           <span class="brand-name" data-i18n="brand.name">حسن سليم</span>
         </a>
 
@@ -123,7 +123,7 @@
             data-mockup="../img/projects/everxt2.webp"
           >
             <div class="card-image">
-              <img src="../img/projects/everxt.webp" alt="تصميم شعار" />
+              <img loading="lazy" src="../img/projects/everxt.webp" alt="تصميم شعار" />
             </div>
             <div class="card-info">
               <h3>Everxt Company</h3>
@@ -135,7 +135,7 @@
             data-mockup="../img/projects/aqar2.webp"
           >
             <div class="card-image">
-              <img src="../img/projects/aqar1.webp" alt="تصميم شعار" />
+              <img loading="lazy" src="../img/projects/aqar1.webp" alt="تصميم شعار" />
             </div>
             <div class="card-info">
               <h3>Aqar Square</h3>
@@ -147,7 +147,7 @@
             data-mockup="../img/projects/she2.webp"
           >
             <div class="card-image">
-              <img src="../img/projects/she.webp" alt="تصميم شعار" />
+              <img loading="lazy" src="../img/projects/she.webp" alt="تصميم شعار" />
             </div>
             <div class="card-info">
               <h3>تصميم شعار هي للملابس النسائية</h3>
@@ -159,7 +159,7 @@
             data-mockup="../img/projects/piraeus2.webp"
           >
             <div class="card-image">
-              <img src="../img/projects/piraeus1.webp" alt="تصميم شعار" />
+              <img loading="lazy" src="../img/projects/piraeus1.webp" alt="تصميم شعار" />
             </div>
             <div class="card-info">
               <h3>piraeus Sporting Academy</h3>
@@ -171,7 +171,7 @@
             data-mockup="../img/projects/forsa2.webp"
           >
             <div class="card-image">
-              <img src="../img/projects/forsa1.webp" alt="تصميم شعار" />
+              <img loading="lazy" src="../img/projects/forsa1.webp" alt="تصميم شعار" />
             </div>
             <div class="card-info">
               <h3>تصميم شعار فرصة للتقسيط</h3>
@@ -183,7 +183,7 @@
             data-mockup="../img/projects/mw2.webp"
           >
             <div class="card-image">
-              <img src="../img/projects/mw.webp" alt="تصميم شعار" />
+              <img loading="lazy" src="../img/projects/mw.webp" alt="تصميم شعار" />
             </div>
             <div class="card-info">
               <h3>media way marketing</h3>
@@ -195,7 +195,7 @@
             class="portfolio-card print reveal-item"
             data-mockup="../img/projects/menu2.webp">
             <div class="card-image">
-              <img src="../img/projects/menu.webp" alt="تصميم مطبوعات" />
+              <img loading="lazy" src="../img/projects/menu.webp" alt="تصميم مطبوعات" />
             </div>
             <div class="card-info">
               <h3>منيو مطعم</h3>
@@ -206,7 +206,7 @@
             class="portfolio-card print reveal-item"
             data-mockup="../img/projects/flyer2.webp">
             <div class="card-image">
-              <img src="../img/projects/flyer.jpg" alt="تصميم مطبوعات" />
+              <img loading="lazy" src="../img/projects/flyer.jpg" alt="تصميم مطبوعات" />
             </div>
             <div class="card-info">
               <h3>تصميم بروشور دعائى</h3>
@@ -217,7 +217,7 @@
             class="portfolio-card print reveal-item"
             data-mockup="../img/projects/magazine2.webp">
             <div class="card-image">
-              <img src="../img/projects/magazine.webp" alt="تصميم مطبوعات" />
+              <img loading="lazy" src="../img/projects/magazine.webp" alt="تصميم مطبوعات" />
             </div>
             <div class="card-info">
               <h3>تصميم مجلة إعلانية</h3>
@@ -327,7 +327,7 @@
 
         <div class="modal-image-wrapper">
           <div class="loader" id="modalLoader"></div>
-          <img id="modalImage" src="" alt="project Mockup" />
+          <img loading="lazy" id="modalImage" src="" alt="project Mockup" />
         </div>
 
         <div class="modal-details">
