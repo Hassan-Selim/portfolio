@@ -1034,13 +1034,13 @@ main {
   display: flex;
   align-items: stretch;
   gap: 16px;
-  background-color: #1a1e29;
   padding: 16px;
   border-radius: 12px;
   transition:
     transform 0.3s ease-in-out,
     border-color 0.3s ease-in-out;
   height: 100%;
+  border: #7d5cff28 1px solid;
 }
 
 .post:hover {
@@ -1071,7 +1071,7 @@ main {
 .post-title {
   margin: 0 0 8px 0;
   font-size: 1.1rem;
-  color: #fff;
+  color: var(--text);
 }
 
 .post-text {
@@ -1109,22 +1109,25 @@ main {
   border-radius: 20px;
   font-size: 0.8rem;
   font-weight: bold;
+  border: var(--c) 1px solid;
 }
 .hidden-post {
   display: none !important;
 }
 
-/* حركة ظهور ناعمة للمقالات اللي هيتم اختيارها */
+
 .blog-item {
   animation: fadeIn 0.5s ease forwards;
   flex: 0 0 calc(33.333% - 16px);
+  background: var(--bg);
   min-width: 280px;
-  height: auto; /* عشان يسمح للكارت ياخد أقصى طول في السطر */
+  height: auto; 
   display: flex;
   flex-direction: column;
+  
 }
 
-/* الحاوية الخارجية والأسهم */
+
 .blog-slider-wrapper {
   position: relative;
   display: flex;

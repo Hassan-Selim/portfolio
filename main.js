@@ -545,29 +545,28 @@ function init() {
 
 init();
 
-
 /* silderrrrrrrr */
-document.addEventListener('DOMContentLoaded', () => {
-  const wrapper = document.querySelector('.blog-slider-wrapper');
-  const track = document.getElementById('blog-container');
-  const prevBtn = document.querySelector('.prev-arrow');
-  const nextBtn = document.querySelector('.next-arrow');
+document.addEventListener("DOMContentLoaded", () => {
+  const wrapper = document.querySelector(".blog-slider-wrapper");
+  const track = document.getElementById("blog-container");
+  const prevBtn = document.querySelector(".prev-arrow");
+  const nextBtn = document.querySelector(".next-arrow");
 
   if (!track || !wrapper) return;
 
   // 1. جلب المقالات الأصلية
-  const originalPosts = Array.from(track.querySelectorAll('.blog-item'));
+  const originalPosts = Array.from(track.querySelectorAll(".blog-item"));
   if (originalPosts.length === 0) return;
-  originalPosts.forEach(post => post.classList.remove('hidden-post'));
+  originalPosts.forEach((post) => post.classList.remove("hidden-post"));
 
   // 2. خلط المقالات عشوائياً
   const shuffledPosts = originalPosts.sort(() => 0.5 - Math.random());
-  track.innerHTML = '';
-  shuffledPosts.forEach(post => track.appendChild(post));
+  track.innerHTML = "";
+  shuffledPosts.forEach((post) => track.appendChild(post));
 
   // 3. الكوبري اللانهائي: استنساخ المقالات مرتين
   for (let i = 0; i < 2; i++) {
-    shuffledPosts.forEach(post => {
+    shuffledPosts.forEach((post) => {
       track.appendChild(post.cloneNode(true));
     });
   }
@@ -575,56 +574,52 @@ document.addEventListener('DOMContentLoaded', () => {
   // 4. دالة حساب عرض مجموعة المقالات الأصلية بالبيكسل
   const getSingleSetWidth = () => {
     let width = 0;
-    const currentItems = track.querySelectorAll('.blog-item');
-    for(let i = 0; i < originalPosts.length; i++) {
-        width += currentItems[i].offsetWidth + 24; // 24 مسافة الفراغ
+    const currentItems = track.querySelectorAll(".blog-item");
+    for (let i = 0; i < originalPosts.length; i++) {
+      width += currentItems[i].offsetWidth + 24; // 24 مسافة الفراغ
     }
     return width;
   };
 
   let singleSetWidth = getSingleSetWidth();
-  window.addEventListener('resize', () => singleSetWidth = getSingleSetWidth());
+  window.addEventListener(
+    "resize",
+    () => (singleSetWidth = getSingleSetWidth()),
+  );
 
   // 5. تشغيل الأسهم
   const getScrollAmount = () => {
-    const postElement = track.querySelector('.blog-item');
+    const postElement = track.querySelector(".blog-item");
     return postElement ? postElement.offsetWidth + 24 : 0;
   };
 
-  nextBtn.addEventListener('click', () => track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' }));
-  prevBtn.addEventListener('click', () => track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' }));
+  nextBtn.addEventListener("click", () =>
+    track.scrollBy({ left: -getScrollAmount(), behavior: "smooth" }),
+  );
+  prevBtn.addEventListener("click", () =>
+    track.scrollBy({ left: getScrollAmount(), behavior: "smooth" }),
+  );
 
-  // 6. 🌟 الخدعة السحرية للحركة المستمرة اللانهائية (ضد عيوب المتصفحات) 🌟
+  // 6. 🌟 التعديل السحري المتوافق مع أيفون وسفاري 🌟
   let isHovered = false;
   let scrollAccumulator = 0;
-  let scrollSpeed = 0.5; // السرعة (تقدر تغيرها براحتك)
-  let initialDiff = null;
-  const firstItem = track.firstElementChild;
+  let scrollSpeed = 0.5;
 
   function autoScrollContinuously() {
     if (!isHovered) {
-      
-      // بنجمع كسر البيكسل (0.5) ولما يكمل 1 بيكسل بنحركه، ده بيمنع تعليقة المتصفح
       scrollAccumulator += scrollSpeed;
+
       if (scrollAccumulator >= 1) {
-          track.scrollBy({ left: -1 }); // زقة بـ 1 بيكسل
-          scrollAccumulator -= 1;
+        // فضلنا نستخدم scrollBy عشان بتعالج الـ RTL صح في كل المتصفحات
+        track.scrollBy({ left: -1 });
+        scrollAccumulator -= 1;
       }
 
-      // بنقيس بالمسطرة المسافة من الحافة اليمين
-      if (initialDiff === null) {
-          initialDiff = wrapper.getBoundingClientRect().right - firstItem.getBoundingClientRect().right;
-      }
-
-      let currentDiff = wrapper.getBoundingClientRect().right - firstItem.getBoundingClientRect().right;
-      let distanceScrolled = currentDiff - initialDiff;
-
-      // أول ما المسافة المقطوعة تساوي عرض المقالات الأصلية...
-      if (distanceScrolled >= singleSetWidth) {
-          // نرجع الشريط لورا خفية بصمت تام
-          track.scrollBy({ left: singleSetWidth });
-          // نصفر العداد ونبدأ من جديد
-          initialDiff = wrapper.getBoundingClientRect().right - firstItem.getBoundingClientRect().right;
+      // التعديل الأهم: منعنا الـ getBoundingClientRect نهائياً عشان الآيفون ميهنجش!
+      // وبنعتمد على قراءة الـ scrollLeft لأنها سريعة ومش بتعمل Reflow للصفحة
+      if (Math.abs(track.scrollLeft) >= singleSetWidth) {
+        // نرجع الشريط لورا
+        track.scrollBy({ left: singleSetWidth });
       }
     }
     requestAnimationFrame(autoScrollContinuously);
@@ -632,23 +627,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   autoScrollContinuously();
 
-  // إيقاف الحركة للقراءة
-  wrapper.addEventListener('mouseenter', () => isHovered = true);
-  wrapper.addEventListener('mouseleave', () => isHovered = false);
-  wrapper.addEventListener('touchstart', () => isHovered = true);
-  wrapper.addEventListener('touchend', () => isHovered = false);
+  // التعديل الأخير: إضافة { passive: true } لدعم اللمس في iOS بدون تعليق
+  wrapper.addEventListener("mouseenter", () => (isHovered = true));
+  wrapper.addEventListener("mouseleave", () => (isHovered = false));
+  wrapper.addEventListener("touchstart", () => (isHovered = true), {
+    passive: true,
+  });
+  wrapper.addEventListener("touchend", () => (isHovered = false), {
+    passive: true,
+  });
 });
-
 
 /* contaaaact mail */
 
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('contactForm');
-  const result = document.getElementById('form-result');
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
+  const result = document.getElementById("form-result");
 
   if (!form) return;
 
-  form.addEventListener('submit', function(e) {
+  form.addEventListener("submit", function (e) {
     e.preventDefault(); // منع المتصفح من عمل Refresh
 
     const fd = new FormData(form);
@@ -661,9 +659,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 1. التحقق من الحقول الفارغة (نفس اللوجيك بتاعك القديم)
     if (!name || !subject || !message) {
-       result.innerHTML = isEnglish ? "Please fill all fields." : "من فضلك املأ جميع الحقول.";
-       result.style.color = "#ff4d4d"; // أحمر
-       return;
+      result.innerHTML = isEnglish
+        ? "Please fill all fields."
+        : "من فضلك املأ جميع الحقول.";
+      result.style.color = "#ff4d4d"; // أحمر
+      return;
     }
 
     // تجميع البيانات للإرسال
@@ -675,169 +675,170 @@ document.addEventListener('DOMContentLoaded', () => {
     result.style.color = "var(--muted, #a0a4b8)";
 
     // 3. إرسال البيانات لـ Web3Forms
-    fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
+        "Content-Type": "application/json",
+        Accept: "application/json",
       },
-      body: json
+      body: json,
     })
-    .then(async (response) => {
-      let json = await response.json();
-      if (response.status == 200) {
-        // حالة النجاح
-        result.innerHTML = isEnglish ? "Message sent successfully! ✅" : "تم إرسال رسالتك بنجاح! هرد عليك في أقرب وقت. ✅";
-        result.style.color = "#4caf50"; // أخضر
-        form.reset(); // تفريغ الفورم
-      } else {
-        // خطأ من السيرفر
-        console.log(response);
-        result.innerHTML = isEnglish ? "Something went wrong, please try again." : "حدث خطأ أثناء الإرسال، يرجى المحاولة لاحقاً.";
+      .then(async (response) => {
+        let json = await response.json();
+        if (response.status == 200) {
+          // حالة النجاح
+          result.innerHTML = isEnglish
+            ? "Message sent successfully! ✅"
+            : "تم إرسال رسالتك بنجاح! هرد عليك في أقرب وقت. ✅";
+          result.style.color = "#4caf50"; // أخضر
+          form.reset(); // تفريغ الفورم
+        } else {
+          // خطأ من السيرفر
+          console.log(response);
+          result.innerHTML = isEnglish
+            ? "Something went wrong, please try again."
+            : "حدث خطأ أثناء الإرسال، يرجى المحاولة لاحقاً.";
+          result.style.color = "#ff4d4d";
+        }
+      })
+      .catch((error) => {
+        // خطأ في الإنترنت
+        console.log(error);
+        result.innerHTML = isEnglish
+          ? "Connection error, check your internet."
+          : "حدث خطأ في الاتصال، يرجى التأكد من الإنترنت.";
         result.style.color = "#ff4d4d";
-      }
-    })
-    .catch(error => {
-      // خطأ في الإنترنت
-      console.log(error);
-      result.innerHTML = isEnglish ? "Connection error, check your internet." : "حدث خطأ في الاتصال، يرجى التأكد من الإنترنت.";
-      result.style.color = "#ff4d4d";
-    })
-    .then(function() {
-      // إخفاء الرسالة بعد 5 ثواني
-      setTimeout(() => {
-        result.innerHTML = "";
-      }, 5000);
-    });
+      })
+      .then(function () {
+        // إخفاء الرسالة بعد 5 ثواني
+        setTimeout(() => {
+          result.innerHTML = "";
+        }, 5000);
+      });
   });
 });
 
 /* .................................. */
 // بنقول للكود: استنى لحد ما هيكل الصفحة (HTML) يحمل بالكامل وبعدين اشتغل
-document.addEventListener('DOMContentLoaded', () => {
-
+document.addEventListener("DOMContentLoaded", () => {
   /* ========================================================
      1. حركة الظهور عند التمرير (Scroll Reveal)
   ======================================================== */
-  const revealElements = document.querySelectorAll('.reveal-item');
-  
+  const revealElements = document.querySelectorAll(".reveal-item");
+
   // المراقب اللي بيشوف الكارت ظهر في الشاشة ولا لسه
-  const revealObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      // لو الكارت ظهر بنسبة 10%
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-        observer.unobserve(entry.target); // نوقف المراقبة عشان الحركة ماتتكررش وتزعج العميل
-      }
-    });
-  }, { threshold: 0.1 }); 
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        // لو الكارت ظهر بنسبة 10%
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          observer.unobserve(entry.target); // نوقف المراقبة عشان الحركة ماتتكررش وتزعج العميل
+        }
+      });
+    },
+    { threshold: 0.1 },
+  );
 
-  revealElements.forEach(el => revealObserver.observe(el));
-
+  revealElements.forEach((el) => revealObserver.observe(el));
 
   /* ========================================================
      2. نظام الفلترة الذكي (Filtering System)
   ======================================================== */
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const portfolioCards = document.querySelectorAll('.portfolio-card');
+  const filterBtns = document.querySelectorAll(".filter-btn");
+  const portfolioCards = document.querySelectorAll(".portfolio-card");
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
+  filterBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
       // تغيير لون الزرار النشط
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+      filterBtns.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
 
-      const filterValue = btn.getAttribute('data-filter');
+      const filterValue = btn.getAttribute("data-filter");
 
       // إخفاء وإظهار الكروت بنعومة
-      portfolioCards.forEach(card => {
-        if (filterValue === 'all' || card.classList.contains(filterValue)) {
+      portfolioCards.forEach((card) => {
+        if (filterValue === "all" || card.classList.contains(filterValue)) {
           // نظهر الكارت
-          card.classList.remove('hide');
+          card.classList.remove("hide");
           setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'scale(1) translateY(0)';
+            card.style.opacity = "1";
+            card.style.transform = "scale(1) translateY(0)";
           }, 50);
         } else {
           // نخفي الكارت بتأثير تصغير
-          card.style.opacity = '0';
-          card.style.transform = 'scale(0.8) translateY(20px)';
+          card.style.opacity = "0";
+          card.style.transform = "scale(0.8) translateY(20px)";
           setTimeout(() => {
-            card.classList.add('hide');
+            card.classList.add("hide");
           }, 400);
         }
       });
     });
   });
 
-
   /* ========================================================
      3. شاشة العرض ومؤشر التحميل (Modal & Spinner)
   ======================================================== */
-  const modal = document.getElementById('projectModal');
-  const modalImg = document.getElementById('modalImage');
-  const modalTitle = document.getElementById('modalTitle');
-  const modalCat = document.getElementById('modalCategory');
-  const modalLoader = document.getElementById('modalLoader'); 
-  const closeModalBtn = document.getElementById('closeModal');
-  const modalBackdrop = document.getElementById('modalBackdrop');
+  const modal = document.getElementById("projectModal");
+  const modalImg = document.getElementById("modalImage");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalCat = document.getElementById("modalCategory");
+  const modalLoader = document.getElementById("modalLoader");
+  const closeModalBtn = document.getElementById("closeModal");
+  const modalBackdrop = document.getElementById("modalBackdrop");
 
-  if(modal) {
+  if (modal) {
     // لما العميل يدوس على أي كارت
-    portfolioCards.forEach(card => {
-      card.addEventListener('click', () => {
+    portfolioCards.forEach((card) => {
+      card.addEventListener("click", () => {
         // نسحب البيانات من الكارت
-        const imgSrc = card.getAttribute('data-mockup');
-        const title = card.querySelector('.card-info h3').innerText;
-        const category = card.querySelector('.card-info span').innerText;
+        const imgSrc = card.getAttribute("data-mockup");
+        const title = card.querySelector(".card-info h3").innerText;
+        const category = card.querySelector(".card-info span").innerText;
 
         // نحط الداتا النصية فورا في الشاشة الكبيرة
         modalTitle.innerText = title;
         modalCat.innerText = category;
-        
+
         // نشغل اللودينج ونخفي الصورة لحد ما تحمل
-        modalLoader.style.display = 'block';
-        modalImg.classList.remove('loaded');
+        modalLoader.style.display = "block";
+        modalImg.classList.remove("loaded");
         modalImg.src = imgSrc;
 
         // الحدث ده بيشتغل أوتوماتيك أول ما الصورة تخلص تحميل 100%
         modalImg.onload = () => {
-          modalLoader.style.display = 'none'; // نخفي اللودينج
-          modalImg.classList.add('loaded'); // نظهر الصورة بنعومة
+          modalLoader.style.display = "none"; // نخفي اللودينج
+          modalImg.classList.add("loaded"); // نظهر الصورة بنعومة
         };
 
         // نفتح الشاشة ونمنع الموقع من السكرول
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden'; 
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
       });
     });
 
     // دالة قفل الشاشة
     const closeModal = () => {
-      modal.classList.remove('active');
-      document.body.style.overflow = ''; // نرجع السكرول للموقع
-      // نفضي الصورة بعد ما تقفل عشان ماتبانش لثانية لو فتح كارت تاني
-      setTimeout(() => { modalImg.src = ''; }, 400); 
+      modal.classList.remove("active");
+      document.body.style.overflow = "";
+
+      setTimeout(() => {
+        modalImg.src = "";
+      }, 400);
     };
 
-    // أوامر القفل (زرار الإغلاق، كليك بره الصورة، زرار Esc في الكيبورد)
-    closeModalBtn.addEventListener('click', closeModal);
-    modalBackdrop.addEventListener('click', closeModal);
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal.classList.contains('active')) {
+    closeModalBtn.addEventListener("click", closeModal);
+    modalBackdrop.addEventListener("click", closeModal);
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("active")) {
         closeModal();
       }
     });
   }
 
-  /* ========================================================
-     4. التريكة الأخيرة: إظهار المشاريع عند فتح الموقع
-  ======================================================== */
-  // بنعمل كليك وهمي على زرار "الكل" عشان الكروت تترص قدام العميل أول ما يفتح
   setTimeout(() => {
     const allBtn = document.querySelector('.filter-btn[data-filter="all"]');
     if (allBtn) allBtn.click();
   }, 100);
-
 });
-
