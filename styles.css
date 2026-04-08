@@ -394,6 +394,7 @@ main {
 }
 .hero {
   padding: clamp(2rem, 6vw, 3.4rem) 0 clamp(1.25rem, 4vw, 1.75rem);
+  height: 100dvh;
 }
 .hero-grid {
   display: grid;
