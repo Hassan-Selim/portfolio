@@ -55,30 +55,38 @@
     </div>
 
     <script>
-      window.addEventListener("load", () => {
-        setTimeout(() => {
-          const timerElement = document.getElementById("redirect-msg");
-          if (!timerElement) return;
+     window.addEventListener('DOMContentLoaded', () => {
+    const timerElement = document.getElementById('redirect-msg');
+    if (!timerElement) return;
 
-          const templateText = timerElement.innerText;
-          let timeLeft = 3;
+    const currentLang = localStorage.getItem('language') || document.documentElement.lang || 'ar';
 
-          const startCountdown = setInterval(() => {
-            timerElement.innerText = templateText.replace(
-              "{{count}}",
-              timeLeft,
-            );
+    const fallbacks = {
+        ar: "سيتم تحويلك تلقائياً خلال {{count}} ثوانٍ...",
+        en: "We'll redirect you automatically in {{count}} seconds..."
+    };
 
-            if (timeLeft <= 0) {
-              clearInterval(startCountdown);
-              window.location.href = "https://hassanselim.art/";
-            }
-            timeLeft--;
-          }, 1000);
+    let timeLeft = 3;
+    let templateText = fallbacks[currentLang] || fallbacks['ar'];
 
-          timerElement.innerText = templateText.replace("{{count}}", timeLeft);
-        }, 150); 
-      });
+    const updateDisplay = () => {
+        timerElement.innerText = templateText.replace('{{count}}', timeLeft);
+    };
+
+    updateDisplay();
+
+    const countdown = setInterval(() => {
+        timeLeft--;
+        if (timeLeft >= 0) {
+            updateDisplay();
+        }
+
+        if (timeLeft <= 0) {
+            clearInterval(countdown);
+            window.location.href = "https://hassanselim.art/";
+        }
+    }, 1000);
+});
     </script>
     <script src="main.js"></script>
   </body>
