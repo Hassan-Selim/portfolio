@@ -43,7 +43,10 @@
           يبدو أنك سلكت طريقاً خاطئاً.. لا تقلق، سنعيدك للمسار الصحيح.
         </p>
 
-        <p data-i18n="error404p2" id="redirect-msg" class="redirect-msg"></p>
+        <p class="redirect-msg">
+    <span data-i18n="error404p2"></span> 
+    <span id="timer-count" style="font-weight: bold; color: var(--accent-color);">3</span>
+</p>
 
         <a
           data-i18n="error404btn"
@@ -55,37 +58,22 @@
     </div>
 
     <script>
-     window.addEventListener('DOMContentLoaded', () => {
-    const timerElement = document.getElementById('redirect-msg');
-    if (!timerElement) return;
-
-    const currentLang = localStorage.getItem('language') || document.documentElement.lang || 'ar';
-
-    const fallbacks = {
-        ar: "سيتم تحويلك تلقائياً خلال {{count}} ثوانٍ...",
-        en: "We'll redirect you automatically in {{count}} seconds..."
-    };
-
+     window.addEventListener('load', () => {
     let timeLeft = 3;
-    let templateText = fallbacks[currentLang] || fallbacks['ar'];
+    const timerElement = document.getElementById('timer-count');
 
-    const updateDisplay = () => {
-        timerElement.innerText = templateText.replace('{{count}}', timeLeft);
-    };
-
-    updateDisplay();
+    if (!timerElement) return;
 
     const countdown = setInterval(() => {
         timeLeft--;
-        if (timeLeft >= 0) {
-            updateDisplay();
-        }
+        timerElement.innerText = timeLeft;
 
         if (timeLeft <= 0) {
             clearInterval(countdown);
             window.location.href = "https://hassanselim.art/";
         }
     }, 1000);
+
 });
     </script>
     <script src="main.js"></script>
