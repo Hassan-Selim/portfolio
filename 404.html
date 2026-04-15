@@ -9,7 +9,9 @@
       href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap"
       rel="stylesheet"
     />
+    
     <link rel="stylesheet" href="styles.css" />
+    
     <style>
       * {
         user-select: none;
@@ -169,7 +171,7 @@
         }
       }
     </style>
-    <script src="main.js"></script>
+    
   </head>
 
   <body>
@@ -212,30 +214,53 @@
         >
       </div>
     </div>
-
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        let timeLeft = 3;
-        const timerElement = document.getElementById("timer-count");
-
-        if (!timerElement) return;
-
+  document.addEventListener("DOMContentLoaded", () => {
+   
+    let timeLeft = 300; 
+    const timerElement = document.getElementById("timer-count");
+    if (timerElement) {
         timerElement.innerText = timeLeft;
-
         const countdown = setInterval(() => {
           timeLeft--;
-
-          if (timeLeft >= 0) {
-            timerElement.innerText = timeLeft;
-          }
-
+          if (timeLeft >= 0) timerElement.innerText = timeLeft;
           if (timeLeft <= 0) {
             clearInterval(countdown);
             window.location.href = "https://hassanselim.art/";
           }
         }, 1000);
-      });
-    </script>
+    }
+
+   
+   
+    const currentLang = localStorage.getItem('language') || (navigator.language.startsWith('ar') ? 'ar' : 'en');
+    
+    const translations = {
+        ar: {
+            h1: "خطأ 404",
+            h2: "عذراً، الصفحة غير موجودة!",
+            p: "يبدو أنك سلكت طريقاً خاطئاً.. لا تقلق، سنعيدك للمسار الصحيح.",
+            btn: "اذهب للموقع"
+        },
+        en: {
+            h1: "Error 404",
+            h2: "Oops! Page Not Found!",
+            p: "Looks like you took a wrong turn.. Don't worry, we'll guide you back.",
+            btn: "Go to website"
+        }
+    };
+
+    const content = translations[currentLang] || translations.ar;
+
+    
+    document.querySelector('[data-i18n="error404h1"]').innerText = content.h1;
+    document.querySelector('[data-i18n="error404h2"]').innerText = content.h2;
+    document.querySelector('[data-i18n="error404p"]').innerText = content.p;
+    document.querySelector('[data-i18n=" error404btn"]').innerText = content.btn; 
+    
+   
+  });
+</script>
     
   </body>
 </html>
