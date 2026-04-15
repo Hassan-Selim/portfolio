@@ -1,81 +1,223 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="../img/Logo.webp" />
     <title>Hassan Selim - Error 404</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
     <style>
-       *{user-select:none}.social-header{position:absolute;top:2rem;left:50%;transform:translateX(-50%);display:flex;gap:15px;z-index:10}.social-header img{width:24px;opacity:.8;transition:.3s;filter:grayscale(.7)}.social-header img:hover{opacity:1;filter:grayscale(0);transform:scale(1.1)}.main-container{display:flex;flex-direction:row-reverse;align-items:center;justify-content:space-around;min-height:100dvh;padding:0 18%}.content-section{flex:1;max-width:500px;z-index:2}.content-section h1{font-size:5rem;color:#b0b6ba;font-weight:900;line-height:1}.content-section h2{font-size:1.5rem;margin-bottom:1rem;font-weight:700;margin-top:-1.6rem}.content-section p{font-size:.9rem;color:var(--text);margin-bottom:30px}.redirect-msg{color:#b0b6ba;font-size:.9rem;margin-bottom:1rem}.btn-go-back{display:inline-block;background-color:#005783;color:#cfebfe;padding:12px 40px;border-radius:30px;text-decoration:none;font-weight:700;transition:.3s;text-transform:uppercase;letter-spacing:1px}.btn-go-back:hover{transform:translateY(-3px);background-color:#143a4d;box-shadow:0 10px 20px #055e8b33}.image-section{flex:1.2;display:flex;justify-content:center;align-items:center;position:relative}.image-wrapper{width:100%;max-width:450px;position:relative;filter:drop-shadow(var(--shadow))}.image-wrapper img{width:100%;height:auto;display:block;transition:.3s ease-in-out;filter:grayscale(.6);opacity:.9}.image-wrapper img:hover{opacity:1;filter:grayscale(.3)}@media (max-width:992px){.main-container{flex-direction:column;text-align:center;padding:100px 20px 50px}.content-section{order:2;text-align:center}.image-section{order:1;width:70%;margin-top:-3rem;margin-bottom:-2.5rem}.content-section h1{font-size:3.5rem}.image-wrapper{max-width:300px}.bg-wave{width:100%;height:50%;clip-path:none;bottom:0;top:auto}.social-header{left:50%;transform:translateX(-50%)}}
+        * {
+            user-select: none
+        }
+
+        .social-header {
+            position: absolute;
+            top: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 10
+        }
+
+        .social-header img {
+            width: 24px;
+            opacity: .8;
+            transition: .3s;
+            filter: grayscale(.7)
+        }
+
+        .social-header img:hover {
+            opacity: 1;
+            filter: grayscale(0);
+            transform: scale(1.1)
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            justify-content: space-around;
+            min-height: 100dvh;
+            padding: 0 18%
+        }
+
+        .content-section {
+            flex: 1;
+            max-width: 500px;
+            z-index: 2
+        }
+
+        .content-section h1 {
+            font-size: 5rem;
+            color: #b0b6ba;
+            font-weight: 900;
+            line-height: 1
+        }
+
+        .content-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.7rem;
+            font-weight: 700;
+            margin-top: -1.6rem
+        }
+
+        .content-section p {
+            font-size: .9rem;
+            color: var(--text);
+        }
+
+        .redirect-msg span {
+            color: #597282;
+            font-size: 3rem;
+        }
+
+        .btn-go-back {
+            display: inline-block;
+            background-color: #005783;
+            color: #cfebfe;
+            padding: 12px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: .3s;
+            text-transform: uppercase;
+            letter-spacing: 1px
+        }
+
+        .btn-go-back:hover {
+            transform: translateY(-3px);
+            background-color: #143a4d;
+            box-shadow: 0 10px 20px #055e8b33
+        }
+
+        .image-section {
+            flex: 1.2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative
+        }
+
+        .image-wrapper {
+            width: 100%;
+            max-width: 450px;
+            position: relative;
+            filter: drop-shadow(var(--shadow))
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: .3s ease-in-out;
+            filter: grayscale(.6);
+            opacity: .9
+        }
+
+        .image-wrapper img:hover {
+            opacity: 1;
+            filter: grayscale(.3)
+        }
+
+        @media (max-width:992px) {
+            .main-container {
+                flex-direction: column;
+                text-align: center;
+                padding: 100px 20px 50px
+            }
+
+            .content-section {
+                order: 2;
+                text-align: center
+            }
+
+            .image-section {
+                order: 1;
+                width: 70%;
+                margin-top: -3rem;
+                margin-bottom: -2.5rem
+            }
+
+            .content-section h1 {
+                font-size: 3.5rem
+            }
+
+            .image-wrapper {
+                max-width: 300px
+            }
+
+            .bg-wave {
+                width: 100%;
+                height: 50%;
+                clip-path: none;
+                bottom: 0;
+                top: auto
+            }
+
+            .social-header {
+                left: 50%;
+                transform: translateX(-50%)
+            }
+        }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="social-header">
-      <a href="https://www.facebook.com/7asanselim" target="_blank"
-        ><img src="img/fb.svg" alt="FB"
-      /></a>
-      <a href="http://www.behance.net/7assanselim" target="_blank"
-        ><img src="img/be.svg" alt="TW"
-      /></a>
-      <a href="https://instagram.com/7assanselim" target="_blank"
-        ><img src="img/ig.svg" alt="IG"
-      /></a>
+        <a href="https://www.facebook.com/7asanselim" target="_blank"><img src="img/fb.svg" alt="FB" /></a>
+        <a href="http://www.behance.net/7assanselim" target="_blank"><img src="img/be.svg" alt="TW" /></a>
+        <a href="https://instagram.com/7assanselim" target="_blank"><img src="img/ig.svg" alt="IG" /></a>
     </div>
 
     <div class="main-container">
-      <div class="image-section">
-        <div class="bg-glow"></div>
+        <div class="image-section">
+            <div class="bg-glow"></div>
 
-        <div class="image-wrapper">
-          <img src="img/404.webp" alt="Hassan Selim 404" />
+            <div class="image-wrapper">
+                <img src="img/404.webp" alt="Hassan Selim 404" />
+            </div>
         </div>
-      </div>
 
-      <div class="content-section">
-        <h1 data-i18n="error404h1">خطأ 404</h1>
-        <h2 data-i18n="error404h2">عذراً، الصفحة غير موجودة!</h2>
-        <p data-i18n="error404p">
-          يبدو أنك سلكت طريقاً خاطئاً.. لا تقلق، سنعيدك للمسار الصحيح.
-        </p>
+        <div class="content-section">
+            <h1 data-i18n="error404h1">خطأ 404</h1>
+            <h2 data-i18n="error404h2">عذراً، الصفحة غير موجودة!</h2>
+            <p data-i18n="error404p">
+                يبدو أنك سلكت طريقاً خاطئاً.. لا تقلق، سنعيدك للمسار الصحيح.
+            </p>
 
-        <p class="redirect-msg">
-    <span data-i18n="error404p2"></span> 
-    <span id="timer-count" style="font-weight: bold; color: var(--accent-color);">3</span>
+            <p class="redirect-msg">
+                <span id="timer-count"">3</span>
 </p>
 
         <a
-          data-i18n="error404btn"
-          href="https://hassanselim.art/"
-          class="btn-go-back"
-          >العودة للرئيسية</a
-        >
-      </div>
+          data-i18n=" error404btn" href="https://hassanselim.art/" class="btn-go-back">العودة للرئيسية</a>
+        </div>
     </div>
 
     <script>
-     window.addEventListener('load', () => {
-    let timeLeft = 3;
-    const timerElement = document.getElementById('timer-count');
+        window.addEventListener('load', () => {
+            let timeLeft = 3;
+            const timerElement = document.getElementById('timer-count');
 
-    if (!timerElement) return;
+            if (!timerElement) return;
 
-    const countdown = setInterval(() => {
-        timeLeft--;
-        timerElement.innerText = timeLeft;
+            const countdown = setInterval(() => {
+                timeLeft--;
+                timerElement.innerText = timeLeft;
 
-        if (timeLeft <= 0) {
-            clearInterval(countdown);
-            window.location.href = "https://hassanselim.art/";
-        }
-    }, 1000);
+                if (timeLeft <= 0) {
+                    clearInterval(countdown);
+                    window.location.href = "https://hassanselim.art/";
+                }
+            }, 1000);
 
-});
+        });
     </script>
     <script src="main.js"></script>
-  </body>
+</body>
+
 </html>
