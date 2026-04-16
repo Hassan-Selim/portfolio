@@ -101,6 +101,11 @@ const I18N = {
     "contact.formNote": "سيتم فتح بريدك الافتراضي لإرسال الرسالة (بدون خادم).",
     "footer.copy": "© كل الحقوق محفوظة 2026",
     "footer.top": "للأعلى",
+    "error404h1": "خطأ 404",
+    "error404h2": "عذراً، الصفحة غير موجودة!",
+    "error404hp": "يبدو أنك سلكت طريقاً خاطئاً.. لا تقلق، سنعيدك للمسار الصحيح.",
+    "error404p2": "سيتم تحويلك تلقائياً خلال ثوانٍ: ",
+    "error404hbtn": "الذهاب للموقع",
   },
   en: {
     "a.skip": "Skip to content",
@@ -207,6 +212,11 @@ const I18N = {
     "contact.formNote": "Your default mail app will open (no backend).",
     "footer.copy": "© All rights reserved 2026",
     "footer.top": "Back to top",
+    "error404h1": "Error 404",
+    "error404h2": "Sorry, the page you are looking for is not found!",
+    "error404p": "doesn't look like you took the right path. Don't worry, we'll get you back to the right place.",
+    "error404p2": "We'll redirect you automatically in seconds: ",
+    "error404btn": "go to website",
   },
 };
 function safeGet(key) {
@@ -665,4 +675,88 @@ document.addEventListener("DOMContentLoaded", () => {
     const allBtn = document.querySelector('.filter-btn[data-filter="all"]');
     if (allBtn) allBtn.click();
   }, 100);
+});
+
+const API_KEY = 'AIzaSyCj2M3JmY-e1K_xd4GEeH4e0x56cVQHQio';
+const BLOG_ID = '5596658929718898081'; 
+
+const modal = document.getElementById('project-modal');
+const overlay = document.getElementById('modal-overlay');
+const closeBtn = document.getElementById('close-modal-btn');
+const container = document.getElementById('project-content-container');
+
+
+const skeletonHTML = `
+    <div class="skeleton-loader" style="display:flex; flex-direction:column; gap:15px; padding-top:10px;">
+        <div style="height:40px; width:60%; background:#333; border-radius:8px; animation: pulse 1.5s infinite;"></div>
+        <div style="height:20px; width:100%; background:#222; border-radius:8px; animation: pulse 1.5s infinite;"></div>
+        <div style="height:20px; width:100%; background:#222; border-radius:8px; animation: pulse 1.5s infinite;"></div>
+        <div style="height:20px; width:80%; background:#222; border-radius:8px; animation: pulse 1.5s infinite;"></div>
+        <div style="height:350px; width:100%; background:#222; border-radius:12px; margin-top:20px; animation: pulse 1.5s infinite;"></div>
+    </div>
+    <style>@keyframes pulse { 0% {opacity:0.6;} 50% {opacity:1;} 100% {opacity:0.6;} }</style>
+`;
+
+async function openProject(postId) {
+    modal.classList.add('active');
+    document.documentElement.classList.add('modal-open');
+    document.body.classList.add('modal-open');
+
+    container.innerHTML = skeletonHTML;
+
+    const url = `https://www.googleapis.com/blogger/v3/blogs/${BLOG_ID}/posts/${postId}?key=${API_KEY}`;
+
+    try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error('Network Error');
+        const data = await response.json();
+        
+
+        let cleanContent = data.content.replace(/^(<br\s*\/?>|\s|&nbsp;|<p><\/p>|<p>&nbsp;<\/p>)+/gi, '');
+        
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = cleanContent;
+        tempDiv.querySelectorAll('img[width="1"]').forEach(img => img.remove());
+        
+
+        container.innerHTML = `
+            <h2 style="margin-top: 0; margin-bottom: 20px;">${data.title}</h2>
+            <div>${tempDiv.innerHTML}</div>
+        `;
+    } catch (error) {
+        console.error('Error:', error);
+        container.innerHTML = '<p style="color: #ff4757; text-align: center; margin-top: 20px;">حدث خطأ أثناء تحميل المشروع. يرجى المحاولة لاحقاً.</p>';
+    }
+}
+
+function closeModal() {
+    modal.classList.remove('active');
+    
+    // إرجاع حركة الموقع الأم
+    document.documentElement.classList.remove('modal-open');
+    document.body.classList.remove('modal-open');
+    
+    // تفريغ المحتوى
+    setTimeout(() => { container.innerHTML = ''; }, 300); 
+}
+
+// أحداث الإغلاق
+closeBtn.addEventListener('click', closeModal);
+overlay.addEventListener('click', closeModal);
+
+// أحداث الفتح
+// أحداث الفتح بطريقة الـ Event Delegation
+document.addEventListener('click', function(event) {
+    // بنشوف هل العنصر اللي اتداس عليه (أو أي أب ليه) هو الزرار المطلوب
+    const btn = event.target.closest('.view-project-btn');
+
+    if (btn) {
+        event.preventDefault();
+        const postId = btn.getAttribute('data-post-id');
+        
+        if (postId) {
+            console.log("Opening post:", postId); // للتأكد في الـ Console
+            openProject(postId);
+        }
+    }
 });
