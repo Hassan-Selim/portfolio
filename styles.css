@@ -979,7 +979,7 @@ main {
   width: max-content;
   will-change: transform;
   cursor: grab;
-  animation: 40s linear infinite scrollMarquee;
+  animation: 60s linear infinite scrollMarquee;
 }
 #blog-container:active,
 #blog-container:hover {
